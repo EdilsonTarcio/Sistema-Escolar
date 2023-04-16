@@ -1,64 +1,31 @@
 # Sistema-Escolar
 
-# Sistema escolar desenvolvido em Codeigniter 4 + AdminLTE 3, com o objetivo de informatizar o sistema educacional pode ser implementado em qualquer escola, publica ou privada!
+## Sistema escolar desenvolvido em Codeigniter 4 + AdminLTE v3, com o objetivo de informatizar o sistema educacional pode ser implementado em qualquer escola, publica ou privada!
 
-## What is CodeIgniter?
+## O que é o CodeIgniter?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+CodeIgniter é um framework web full-stack PHP que é leve, rápido, flexível e seguro. Mais informações podem ser encontradas no [Site Oficial](https://codeigniter.com).
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Mais informações sobre os planos para a versão 4 podem ser encontradas no [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) nos fóruns.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+O guia do usuário correspondente à versão mais recente do framework pode ser encontrado
+[aqui](https://codeigniter4.github.io/userguide/).
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## Instalação e atualizações
 
-## Installation & updates
+Para criar um projeto: `composer create-project codeigniter4/appstarter` ou `composer update` para baixar as dependencias desse projeto e executar sempre que houver uma nova versão do framework.
+## Configurar
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Copie  `env` e `.env` adapte para seu aplicativo, especificamente o baseURL e quaisquer configurações de banco de dados.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## Mudança importante com index.php
 
-## Setup
+`index.php` não está mais na raiz do projeto! Ele foi movido para dentro da pasta *public* , para melhor segurança e separação dos componentes.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Isso significa que você deve configurar seu servidor web para "apontar" para a pasta *public* do seu projeto , e não para a raiz do projeto. Uma prática melhor seria configurar um host virtual para apontar para lá. Uma prática ruim seria apontar seu servidor da Web para a raiz do projeto e esperar inserir *public/...* , pois o restante de sua lógica e a estrutura são expostos.
 
-## Important Change with index.php
+**Por favor**, leia o guia do usuário para uma melhor explicação de como o CI4 funciona!
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## AdminLTE v3
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+O layout e componentes do AdminLTE v3 utilizado nesse projeto pode ser visto [aqui](https://adminlte.io/themes/v3/index3.html)
