@@ -93,14 +93,11 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
   <!-- Main Footer -->
   <?= view('layout/footer')?>
 </div>
 <!-- ./wrapper -->
-
 <!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->

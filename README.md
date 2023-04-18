@@ -1,6 +1,6 @@
 # Sistema-Escolar
 
-## Sistema escolar desenvolvido em Codeigniter 4 + AdminLTE v3, com o objetivo de informatizar o sistema educacional pode ser implementado em qualquer escola, publica ou privada!
+## Sistema escolar desenvolvido em PHP com Codeigniter 4 + AdminLTE v3, com o objetivo de informatizar o sistema educacional pode ser implementado em qualquer escola, publica ou privada!
 
 ## O que é o CodeIgniter?
 
