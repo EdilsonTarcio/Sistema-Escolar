@@ -19,6 +19,7 @@ class Login extends BaseController
                 $data['msg'] = 'Usuario e/ou senha incorretos';
             }else{
                 //Salva os dados na sessão e redireciona
+                $this->session->set('id', $usuarioCheck->id);
                 $this->session->set('nome', $usuarioCheck->nome);
                 $this->session->set('perfil', $usuarioCheck->grupo);
                 $this->session->set('email', $usuarioCheck->email);
