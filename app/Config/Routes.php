@@ -28,7 +28,7 @@ $routes->get('logout', 'Logout::index');
 $adminFilter = 'auth:admin,coordenador,secretaria';
 $routes ->group('aluno', ['filter' => $adminFilter], static function($routes){
     $routes->get('', 'Admin\Aluno::index');
-    $routes->get('(:any)', 'Admin\Aluno::$1'); //reconhece o nome da função que está no controller edit($id), update($id)....
+    $routes->match(['get', 'post'], '(:any)', 'Admin\Aluno::$1'); //reconhece o nome da função que está no controller edit($id), update($id)....
 });
 
 /*--------------------------------------------------------------------

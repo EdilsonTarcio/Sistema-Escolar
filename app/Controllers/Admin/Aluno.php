@@ -3,18 +3,36 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-
+use Exception;
 class Aluno extends BaseController
 {
     public function index()
     {
         echo '<h1> Index de usuario</h1>';
     }
-
     
-    public function store()
+    public function cadastrar()
     {
-        echo '<h1> store de usuario</h1>';
+        $data['msg'] = '';
+        if($this->request->getMethod() === 'post'){
+            $usuarioModel = model("UsuarioModel");
+            try{
+                $usuarioData = $this->request->getPost();
+                $usuarioData['ativo'] = 1;
+                if($usuarioModel->save($usuarioData)){
+                    $data['msg'] = 'Usuario Criado com Sucesso';
+                }else{
+                    $data['msg']    = 'Erro ao criar usuario';
+                    $data['errors'] = $usuarioModel->errors(); 
+                }
+            }catch(Exception $e){
+                $data['msg']    = 'Erro ao criar usuario' . $e->getMessage();
+            }
+        }else{
+            return view('aluno/cadastro');
+        }
+        return view('aluno/cadastro', $data);
+                
     }
     
     public function show()

@@ -25,14 +25,14 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Faça login para iniciar sua sessão</p>
+                <span style="color: red;">
+                    <!-- INCLUIR A VARIÁVEL $msg -->
+                    <?= $msg ?? ''  ?>
+                </span>
                 <form method="post">
                     <!-- INCLUIR(DESCOMENTAR) A FUNÇÃO csrf_field(); -->
                     <?php echo csrf_field(); ?>
                     <div class="input-group mb-3">
-                        <span style="color: red;">
-                            <!-- INCLUIR A VARIÁVEL $msg -->
-                            <?php echo $msg ?? ''  ?>
-                        </span>
                         <input type="text" name="usuario" class="form-control" placeholder="Informe seu usuário">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -63,11 +63,11 @@
     <!-- /.login-box -->
 
     <!-- jQuery -->
-    <script src="<?= base_url() ?>plugins/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="<?= base_url() ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?= base_url() ?>dist/js/adminlte.min.js"></script>
+    <script src="<?= base_url() ?>/dist/js/adminlte.min.js"></script>
 </body>
 
 </html>
