@@ -12,7 +12,9 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
+$routes->set404Override(static function () {
+    echo view('errors/404.php');
+});
 
 /*--------------------------------------------------------------------
  * Route Definitions
@@ -23,6 +25,9 @@ $routes->get('/', 'Home::index', ['filter' => 'auth:admin,coordenador,secretaria
 $routes->match(['get', 'post'], 'login', 'Login::index');
 $routes->match(['get', 'post'], 'registrar', 'Registrar::index');
 $routes->get('logout', 'Logout::index');
+$routes->get('404', static function () {
+    echo view('errors/404.php');
+});
 
 //Aluno
 $adminFilter = 'auth:admin,coordenador,secretaria';

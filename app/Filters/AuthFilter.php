@@ -8,30 +8,22 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class AuthFilter implements FilterInterface
 {
-    /**
-     *
-     * @param RequestInterface $request
-     * @param array|null       $arguments
-     *
-     * @return mixed
-     */
     public function before(RequestInterface $request, $arguments = null)
     {
         //Validar a sessão, bem como o perfil
         $session = service('session');
-        if(! in_array($session->get('perfil'), $arguments)){
-            die('Você não pode acessar essa página!');
+        if(! in_array($session->get('perfil'), $arguments)){            
+            //se não estiver logadio
+            if(isset($_SESSION['id']) == null){
+                return redirect()->to('login');
+            }
+        
+            //Para quem não tem o perfil permitido
+            return redirect()->to('404');
         }
-    }
 
-    /**
-     *
-     * @param RequestInterface  $request
-     * @param ResponseInterface $response
-     * @param array|null        $arguments
-     *
-     * @return mixed
-     */
+    }
+    
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         //
