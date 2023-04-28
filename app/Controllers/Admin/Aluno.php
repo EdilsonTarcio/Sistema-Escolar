@@ -35,19 +35,19 @@ class Aluno extends BaseController
                 
     }
     
-    public function show()
+    public function show($id)
     {
-        echo '<h1> show de usuario</h1>';
+        echo '<h1> show de usuario</h1>'.$id;
     }
     
-    public function update()
+    public function update($id)
     {
-        echo '<h1> update de usuario</h1>';
+        echo '<h1> update de usuario</h1>'.$id;
     }
     
-    public function delete()
+    public function delete($id)
     {
-        echo '<h1> delete de usuario</h1>';
+        echo '<h1> delete de usuario</h1>'.$id;
     }
 
 }

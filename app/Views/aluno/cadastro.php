@@ -1,16 +1,13 @@
 <?= view('layout/head') ?>
 <!-- Navbar -->
-
 <?= view('layout/navbar') ?>
 <!-- /.navbar -->
-
-<!-- Main Sidebar Container -->
 <?= view('layout/sidebar') ?>
-
-<!-- Content Wrapper. Contains page content -->
+<!-- Main Sidebar Container -->
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-header">
+    <!-- Content Header (Page header) -->
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
@@ -50,31 +47,31 @@
             </div> <!-- /.alertas -->
             <div class="form-group">
               <label>Nome Completo</label>
-              <input type="text" name="nome" class="form-control" placeholder="Nome do aluno">
+              <input type="text" name="nome" class="form-control" placeholder="Nome do aluno" required>
             </div>
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>Usuário</label>
-                  <input type="text" name="usuario" class="form-control" placeholder="Usuario para acessar o sistema">
+                  <input type="text" name="usuario" class="form-control" placeholder="Usuario para acessar o sistema" required>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>E-mail</label>
-                  <input type="text" name="email" class="form-control" placeholder="E-mail do aluno ou do responsavél">
+                  <input type="text" name="email" class="form-control" placeholder="E-mail do aluno ou do responsavél" >
                 </div>
               </div>
               <div class="col-sm-3">
                 <div class="form-group">
                   <label>Senha</label>
-                  <input type="password" name="senha" placeholder="Informe sua senha" class="form-control">
+                  <input type="password" name="senha" placeholder="Informe sua senha" class="form-control" required>
                 </div>
               </div>
               <div class="col-sm-9">
                 <div class="form-group">
                   <label>Grupo</label>
-                  <input type="text" name="grupo" placeholder="Informe o grupo" class="form-control">
+                  <input type="text" name="grupo" placeholder="Informe o grupo" class="form-control" required>
                 </div>
               </div>
             </div><!-- /.row -->
@@ -99,5 +96,4 @@
 <!-- AdminLTE App -->
 <script src="<?= base_url() ?>/dist/js/adminlte.min.js"></script>
 </body>
-
 </html>

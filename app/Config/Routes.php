@@ -32,8 +32,7 @@ $routes->get('404', static function () {
 //Aluno
 $adminFilter = 'auth:admin,coordenador,secretaria';
 $routes ->group('aluno', ['filter' => $adminFilter], static function($routes){
-    $routes->get('', 'Admin\Aluno::index');
-    $routes->match(['get', 'post'], '(:any)', 'Admin\Aluno::$1'); //reconhece o nome da função que está no controller edit($id), update($id)....
+    $routes->match(['get', 'post'],'(:any)', 'Admin\Aluno::$1');
 });
 
 /*--------------------------------------------------------------------
