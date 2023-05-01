@@ -14,6 +14,9 @@ O guia do usuário correspondente à versão mais recente do framework pode ser 
 ## Instalação e atualizações
 
 Para criar um projeto: `composer create-project codeigniter4/appstarter` ou `composer update` para baixar as dependencias desse projeto e executar sempre que houver uma nova versão do framework.
+
+Executar `php spark migrate` para criar as tabelas no banco de dados e `php spark db:seed adm` para criar os usuarios admins
+
 ## Configurar
 
 Copie  `env` e `.env` adapte para seu aplicativo, especificamente o baseURL e quaisquer configurações de banco de dados.

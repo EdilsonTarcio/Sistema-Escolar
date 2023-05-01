@@ -42,7 +42,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?= site_url('aluno/cadastrar')?>" class="nav-link">
                     <i class="far fa-dot-circle nav-icon"></i>
                     <p>Novo aluno</p>
                   </a>

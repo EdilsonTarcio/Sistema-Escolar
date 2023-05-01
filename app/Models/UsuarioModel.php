@@ -25,13 +25,27 @@ class UsuarioModel extends Model
 
     // Validation
     protected $validationRules      = [
-        'nome'    => 'required',
-        'usuario' => 'required',
-        'senha'   => 'required',
+        'nome'    => 'required|min_length[15]',
+        'usuario' => 'required|valid_email|is_unique[users.usuario,id,{id}]',
+        'senha'   => 'required|min_length[8]',
+        'email'   => 'valid_email|is_unique[usuarios.email]',
         'grupo'   => 'required',
         'ativo'   => 'required'
     ];
-    protected $validationMessages   = [];
+    protected $validationMessages   = [
+        'email' => [
+            'is_unique' => 'Desculpe, esse e-mail já está em uso favor informar outro.',
+        ],
+        'nome' => [
+            'required'      => 'Favor informe seu nome.',
+            'min_length'    => 'Informe um nome maior',
+        ],
+        'usuario' => [
+            'required'      => 'Favor informe seu usuario.',
+            'valid_email'   => 'O e-mail desse usuario não corresponde com o cadastrado',
+            'is_unique' => 'Desculpe, esse usuario já está em uso favor informar outro.',
+        ],
+    ];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
 
